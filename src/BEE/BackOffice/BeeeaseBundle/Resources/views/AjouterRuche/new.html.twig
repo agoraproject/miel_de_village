@@ -1,0 +1,92 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+    <a href="{{path('ajouterruche')}}" class="btn btn-default">Retour à la liste</a>
+{% endblock %}
+
+{% block window %}
+<div class="inner-padding"> 
+    
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+    <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.nom) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.nom) }}
+        </div>
+    </div>
+    <div class="spacer-10"></div>
+    <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.rucher) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.rucher) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.statut) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.statut) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+     <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.reine) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.reine) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+       
+     <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.sourceColonie,'Source') }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.sourceColonie) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+           <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.typeRuche,'Modèle') }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.typeRuche) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+       
+    <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.fabrication) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.fabrication) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-3">
+            {{ form_label(form.typePlancher,'Plancher') }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.typePlancher) }}
+        </div>
+        <div class="spacer-10"></div>
+    </div>
+    {{ form_end(form) }}
+    
+</div>
+{% endblock %}

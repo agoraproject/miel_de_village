@@ -1,0 +1,42 @@
+{%extends "::layout.html.twig"%}
+
+{% block window -%}
+    <h3>Liste des Transvasements</h3><br/>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Date de transvasement</th>
+                <th scope="col">Ruche de destination</th>
+                <th scope="col">Ruche d'origine</th>
+               {# <th>Source de la colonie</th>
+                <th>Type de ruche</th>
+                <th>Nbre de cadres</th>
+                <th>Fabrication</th>
+                <th>Type de plancher</th>
+                <th>Notes</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.ruche }}</td>
+                <td>{{ entity.origineRuche }}</td>
+                {#<td>{{ entity.sourceColonie }}</td>
+                <td>{{ entity.typeRuche }}</td>
+                <td>{{ entity.nbreCadres }}</td>
+                <td>{{ entity.fabrication }}</td>
+                <td>{{ entity.typePlancher }}</td>
+                <td>{{ entity.notes }}</td>#}
+                <td> <a href="{{path('transvasement_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ </table>
+    <ul>
+          <a href="{{ path('transvasement_new') }}" class="btn btn-default">Ajouter</a>
+    </ul>
+    {% endblock %}

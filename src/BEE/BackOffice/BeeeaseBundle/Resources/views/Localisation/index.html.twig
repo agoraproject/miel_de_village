@@ -1,0 +1,45 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Localisation</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Date de déplacement</th>
+                <th>Ruche</th>
+                <th>Rucher</th>
+                <th>Transhumance</th>
+                <th>Motif de déplacement</th>
+                <th>Numéro d'emplacement</th>
+                
+                
+              
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+            
+                <td>{% if entity.dateDeplacement %}{{ entity.dateDeplacement|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.ruche }}</td>
+                <td>{{ entity.rucher }}</td>
+                <td>{{ entity.intituleTranshumance }}</td>
+                <td>{{ entity.motifDeplacement }}</td>
+                <td>{{ entity.noEmplacement }}</td>
+                
+                <td> <a href="{{ path('localisation_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td> <a href="{{ path('localisation_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('localisation_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,240 @@
+<nav class="sidebar-nav-v2">                         
+    <ul>
+        <li class="page-arrow active-page">
+            <a href="{{ path('home') }}"><i class="fa fa-dashboard"></i> Dashboard </a>
+        </li>
+        <li>
+            <a href="{{ path('rucher') }}"><i class="fa fa-sun-o"></i>Ruchers<span class="indicator-pill">7</span></a>
+        </li>
+        <li>
+            <a href="{{ path('ruche') }}"><i class="fa fa-sun-o"></i>Ruches<span class="indicator-dot">50</span></a>
+        </li>
+        <li>
+            <a href="{{ path('reine') }}"><i class="fa fa-sun-o"></i>Reine{#<span class="indicator-dot">2#}</span></a>
+        </li>   
+         <li>
+            <a href="{{ path('recolte') }}"><i class="fa fa-sun-o"></i>Récolte</a>
+        </li>  
+        
+        <li>
+            <a href=""><i class="fa fa-calendar-o"></i>Calendrier</a>
+        </li> 
+          <li>
+            <a href="{{ path('evenement') }}"><i class="fa fa-calendar-o"></i>Evènement</a>
+        </li> 
+         <li>
+            <a href="#"><i class="fa fa-wrench"></i> Actions <i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                    <a href="{{ path('action') }}">Action</a>
+                </li> 
+                <li>
+                    <a href="{{ path('inspection') }}">Inspection</a>
+                </li> 
+                <li>
+                    <a href="{{ path('transvasement') }}">Transvasement</a>
+                </li>
+                <li>
+                    <a href="{{ path('introduction') }}">Introduction</a>
+                </li>
+                <li>
+                    <a href="{{ path('apiclass') }}">Apiclass</a>
+                </li>
+                <li>
+                    <a href="{{ path('elevage') }}">Elevage</a>
+                </li>
+                <li>
+                    <a href="{{ path('essaimage') }}">Essaimage</a>
+                </li>  
+            </ul>
+        </li>
+       {# <li>
+            <a href="#"><i class="fa fa-file-o"></i> Pages <i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                    <a href="#">Billing</a>
+                </li>                          
+                <li>
+                    <a href="comments.html">Comments</a>
+                </li> 
+                <li>
+                    <a href="clients.html">Clients</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li> 
+                <li>
+                    <a href="files.html">Files</a>
+                </li> 
+                <li>
+                    <a href="planning.html">Planning</a>
+                </li>  
+                <li>
+                    <a href="#">Social</a>
+                </li>  
+                <li>
+                    <a href="ticketsupport.html">Ticket Support</a>
+                </li>
+                <li>
+                    <a href="timeline.html">Timeline</a>
+                </li>
+                <li>
+                    <a href="wiki.html">Wiki</a>
+                </li>                                                                                        
+            </ul>
+        </li>                         #}
+    {#    <li>
+            <a href="#"><i class="fa fa-star-o"></i> UI Elements<i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>                            
+                <li>
+                    <a href="buttonsandicons.html">Buttons &amp; Icons</a>
+                </li>
+                <li>
+                    <a href="notifications.html">Notifications</a>
+                </li>                                    
+                <li>
+                    <a href="dropdownmenu.html">Dropdown &amp; Menu</a>
+                </li> 
+                <li>
+                    <a href="misc.html">Misc</a>
+                </li>  
+                <li>
+                    <a href="tabs.html">Tabs</a>
+                </li>
+                <li>
+                    <a href="toolbars.html">Toolbars</a>
+                </li>                                                                                                                         
+            </ul>
+        </li>#}
+        <li class="seperator"><!-- * seperator line * --></li>
+          <li>
+            <a href="#"><i class="fa fa-th"></i> Listes ruche <i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                    <a href="{{ path('sourcecolonie') }}">Source de la colonie</a>
+                </li> 
+                 <li>
+                    <a href="{{ path('statut') }}">Statut de la ruche</a>
+                </li> 
+                <li>
+                    <a href="{{ path('fabrication') }}">Fabrication</a>
+                </li> 
+                 <li>
+                    <a href="{{ path('typeplancher') }}">Type de plancher</a>
+                </li> 
+                <li>
+                    <a href="{{ path('typeruche') }}">Type de ruche</a>
+                </li>
+                <li>
+                    <a href="{{ path('motifdeplacement') }}">Motif de déplacement</a>
+                </li>
+                <li>
+                    <a href="{{ path('naturerecolte') }}">Nature de la récolte</a>
+                </li>
+                <li>
+                    <a href="{{ path('typerecolte') }}">Type de récolte</a>
+                </li>
+                 <li>
+                    <a href="{{ path('fleur') }}">Liste des fleur</a>
+                </li>
+            </ul>
+        </li>
+          <li>
+            <a href="#"><i class="fa fa-th"></i> Listes reine<i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                    <a href="{{ path('couleur') }}"></i> Liste des couleurs</a>
+                </li> 
+                <li>
+                     <a href="{{ path('disparitionreine') }}"></i> Cause disparition reine</a>
+                </li>
+                <li>
+                    <a href="{{ path('eleveur') }}"></i> Liste des éleveurs </a>
+                </li>
+                <li>
+                    <a href="{{ path('race') }}">Race</a>
+                </li>
+                 <li>
+                    <a href="{{ path('statutreine') }}">Statut de la reine</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-th"></i> Listes des actions<i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                    <a href="{{ path('action') }}"></i> Liste actions</a>
+                </li> 
+                <li>
+                     <a href="{{ path('typeaction') }}"></i> Type d'action</a>
+                </li>
+            </ul>
+        </li>
+             <li>
+            <a href="#"><i class="fa fa-th"></i> Listes inspection<i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>
+                <li>
+                  <a href="{{ path('affection') }}"></i> Liste des affections</a>
+                </li> 
+                <li>
+                     <a href="{{ path('cdtsmeteo') }}"></i> Conditions météo</a>
+                </li>
+            </ul>
+             </li>
+     
+       {# <li>
+            <a href="#"><i class="fa fa-warning"></i> Error Pages <i class="fa fa-caret-left pull-right"></i></a>
+
+            <!-- * sub menu * -->
+            <ul>                            
+                <li>
+                    <a href="400.html">400</a>
+                </li>
+                <li>
+                    <a href="401.html">401</a>
+                </li>
+                <li>
+                    <a href="403.html">403</a>
+                </li>
+                <li>
+                    <a href="404.html">404</a>
+                </li>
+                <li>
+                    <a href="500.html">500</a>
+                </li>
+                <li>
+                    <a href="503.html">503</a>
+                </li>                                                                                                                  
+            </ul>
+
+        </li>#}
+     {#   <li class="menu-label">
+                <div class="spacer-20"></div>
+                Some group label
+            <div class="spacer-10"></div>
+        </li> 
+        <li>
+            <a href="maps.html"><i class="fa fa-map-marker"></i> Maps</a>
+        </li> 
+        <li>
+            <a href="widgets.html"><i class="fa fa-columns"></i> Widgets</a>
+        </li> 
+        <li>
+            <a href="sitemap.html"><i class="fa fa-sitemap"></i> Sitemap</a>
+        </li>                                                                                                                   
+    </ul>#}
+</nav><!-- End .sidebar-nav-v1 -->

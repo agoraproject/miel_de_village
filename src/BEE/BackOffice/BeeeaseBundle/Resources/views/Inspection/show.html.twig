@@ -1,0 +1,146 @@
+{%extends "::layout.html.twig"%}
+
+{% block action %}
+
+ <ul class="record_actions">
+        <a href="{{ path('inspection_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('inspection')}}" class="btn btn-default">Retour à la liste</a>
+  </ul>
+
+{% endblock %}
+
+{% block window -%}
+    <h3>Inspection</h3><br/>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Activité au trou d'envol</th>
+                <td>{{ entity.activiteTrouEnvol }}</td>
+            </tr>
+            <tr>
+                <th>Oeufs vus</th>
+                <td>{{ entity.oeufsVus }}</td>
+            </tr>
+            <tr>
+                <th>Reine vue</th>
+                <td>{{ entity.reineVue }}</td>
+            </tr>
+            <tr>
+                <th>Moisissure</th>
+                <td>{{ entity.moisissure }}</td>
+            </tr>
+            <tr>
+                <th>Abeilles au sol</th>
+                <td>{{ entity.abeillesSolVisite }}</td>
+            </tr>
+            <tr>
+                <th>Température</th>
+                <td>{{ entity.tMeteo }}</td>
+            </tr>
+            <tr>
+                <th>Vent</th>
+                <td>{{ entity.vent }}</td>
+            </tr>
+            <tr>
+                <th>Tenue au cadre</th>
+                <td>{{ entity.tenueCadre }}</td>
+            </tr>
+            <tr>
+                <th>Cadre de couvain fermé</th>
+                <td>{{ entity.cadreCouvainFerme }}</td>
+            </tr>
+            <tr>
+                <th>Cadre de couvain ouvert</th>
+                <td>{{ entity.cadreCouvainOuvert }}</td>
+            </tr>
+            <tr>
+                <th>Cadre de couvain mâle</th>
+                <td>{{ entity.cadreCouvainMale }}</td>
+            </tr>
+            <tr>
+                <th>Cadre de miel</th>
+                <td>{{ entity.cadreMiel }}</td>
+            </tr>
+            <tr>
+                <th>Cadre de pollen</th>
+                <td>{{ entity.cadrePollen }}</td>
+            </tr>
+            <tr>
+                <th>Peuplement</th>
+                <td>{{ entity.peuplement }}</td>
+            </tr>
+            <tr>
+                <th>Repartition du couvain</th>
+                <td>{{ entity.repartitionCouvain }}</td>
+            </tr>
+            <tr>
+                <th>Qte de cellules royales</th>
+                <td>{{ entity.qteCelluleRoyale }}</td>
+            </tr>
+            <tr>
+                <th>Cellule royales d'essaimage</th>
+                <td>{{ entity.celluleRoyaleEssaimage }}</td>
+            </tr>
+            <tr>
+                <th>Cellule royales de supersédure</th>
+                <td>{{ entity.celluleRoyaleSupersedure }}</td>
+            </tr>
+            <tr>
+                <th>Cellule royale de sauveté</th>
+                <td>{{ entity.celluleRoyaleSauvete }}</td>
+            </tr>
+            <tr>
+                <th>Poids de l'inspection</th>
+                <td>{{ entity.poidsInspection }}</td>
+            </tr>
+            <tr>
+                <th>Abeilles traînantes</th>
+                <td>{{ entity.abeillesTrainantes }}</td>
+            </tr>
+            <tr>
+                <th>Abeilles avec ailes déformées</th>
+                <td>{{ entity.abeillesAilesDeformees }}</td>
+            </tr>
+            <tr>
+                <th>Varroa</th>
+                <td>{{ entity.varroaAbeilles }}</td>
+            </tr>
+            <tr>
+                <th>Fecondité éval</th>
+                <td>{{ entity.feconditeEval }}</td>
+            </tr>
+            <tr>
+                <th>Ardeur au travail éval</th>
+                <td>{{ entity.ardeurTravailEval }}</td>
+            </tr>
+            <tr>
+                <th>Resistance maladie éval</th>
+                <td>{{ entity.resistanceMaladieEval }}</td>
+            </tr>
+            <tr>
+                <th>Douceur éval</th>
+                <td>{{ entity.douceurEval }}</td>
+            </tr>
+            <tr>
+                <th>Hivernage éval</th>
+                <td>{{ entity.hivernageEval }}</td>
+            </tr>
+            <tr>
+                <th>Propolis éval</th>
+                <td>{{ entity.propolisEval }}</td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>{{ entity.notes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+  
+   
+{% endblock %}

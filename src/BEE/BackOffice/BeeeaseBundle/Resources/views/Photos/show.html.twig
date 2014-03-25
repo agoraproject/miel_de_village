@@ -1,0 +1,31 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h1>Photos</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Chemin</th>
+                <td>{{ entity.chemin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('photos') }}">
+         Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('photos_edit', { 'id': entity.id }) }}">
+            Editer
+        </a>
+    </li>
+</ul>
+{% endblock %}

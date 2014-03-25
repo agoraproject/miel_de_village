@@ -1,0 +1,35 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des Introductions</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Ruche</th>
+                {#<th>Qte de reines</th>
+                <th>Reine</th>
+                <th>Statut de la reine</th>
+                <th>Elevage</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.ruche }}</td>
+                {#<td>{{ entity.qteReine }}</td>
+                <td>{{ entity.reine }}</td>
+               <td>{{ entity.statutReine }}</td>
+                 <td>{{ entity.elevage }}</td>#}
+               <td> <a href="{{path('introduction_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+        <a href="{{ path('introduction_new') }}" class="btn btn-default">Ajouter</a>
+    </ul>
+    {% endblock %}

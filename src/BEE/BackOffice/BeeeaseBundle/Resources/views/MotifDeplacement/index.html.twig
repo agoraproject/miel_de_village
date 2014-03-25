@@ -1,0 +1,32 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des motifs de déplacement</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td><a href="{{ path('motifdeplacement_edit', { 'id': entity.id }) }}">Editer</a>
+                <td><a href="{{ path('motifdeplacement_delete', { 'id': entity.id }) }}">Supprimer</a>
+              
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('motifdeplacement_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,34 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+
+        <a href="{{ path('recolte_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('recolte')}}" class="btn btn-default">Retour à la liste</a>
+       
+{% endblock %}
+{% block window  -%}
+<div class="inner-padding"> 
+    <table class="record_properties">
+        <tbody>
+             <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Qte</th>
+                <td>{{ entity.qte }}</td>
+            </tr>
+            <tr>
+                <th>type de récolte</th>
+                <td>{{ entity.typeRecolte }}</td>
+            </tr>
+             <tr>
+                <th>Nature de la récolte</th>
+                <td>{{ entity.natureRecolte }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

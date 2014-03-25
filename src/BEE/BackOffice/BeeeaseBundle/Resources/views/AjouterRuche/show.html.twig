@@ -1,0 +1,444 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+
+<a href="{{ path('action_new') }}" class="btn btn-default">Action</a>
+<a href="{{ path('evenement_new') }}" class="btn btn-default">Evènement</a>
+<a href="{{ path('localisation_new') }}" class="btn btn-default">Déplacer</a>
+<a href="{{ path('introduction_new') }}" class="btn btn-default">Introduire une reine</a>
+<a href="{{ path('inspection_new') }}" class="btn btn-default">Inspection</a>
+<a href="{{ path('transvasement_new') }}" class="btn btn-default">Transvasement</a>
+<a href="{{ path('statut_new') }}" class="btn btn-default">Statut</a>
+<a href="{{ path('recolte_new') }}" class="btn btn-default">Récolte</a>
+<a href="{{ path('ruche_edit', { 'id': entity.id })}}" class="btn btn-default">Renommer</a>
+
+{% endblock %}
+{% block window -%}
+<div class="row ext-raster">
+    <div class="col-sm-6">
+        <div class="inner-padding">
+            <div class="client-block" style = "padding:0">
+                <ul class="client-block-list">
+                    <li>
+                        <span class="label label-info"><h3>Informations générales</h3></span>
+                        <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Editer</a>
+                                </li>
+                                <li>
+                                    <a href="{{path('ajouterruche')}}"><i class="fa fa-cog"></i> Retour à la liste</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Supprimer</a>
+                                </li>                        
+                            </ul>
+                        </div><!-- End .dropdown -->
+                    </li> 
+                    <li>
+                        <span class="text-muted">Nom:</span> {{ entity.nom }}
+                    </li>
+                    <li>
+                        <span class="text-muted">Plancher:</span> {{ entity.rucher }}
+                    </li>
+                    <li>
+                        <span class="text-muted">Statut:</span> {{ entity.statut }}
+                    </li> 
+                    <li>
+                        <span class="text-muted">Fabrication:</span> {{ entity.fabrication }}
+                    </li> 
+                    <li>
+                        <span class="text-muted">Modèle:</span> {{ entity.typeRuche }}
+                    </li>
+                    <li>
+                        <span class="text-muted">Plancher:</span> {{ entity.typePlancher }}
+                    </li>
+                </ul>
+            </div><!-- End .client-block --> 
+        </div>
+    </div>
+    <span class="breakpoint-sm ext-raster-line-6"></span>
+    <div class="col-sm-6">
+        <div class="inner-padding">
+            <div class="client-block" style = "padding:0">
+                <ul class="client-block-list">
+                    <li>
+                        <span class="label label-info"><h3>Informations reine</h3></span>
+                        <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i>Editer</a>
+                                </li>
+                                  <li>
+                                    <a href="{{path('ajouterruche')}}"><i class="fa fa-cog"></i> Retour à la liste</a>
+                                </li> 
+                                {#<li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Supprimer</a>
+                                </li>#}
+                                                     
+                            </ul>
+                        </div><!-- End .dropdown -->
+                    </li>
+                   
+                    <li>
+                        <span class="text-muted">Nom:</span> Elisabeth
+                    </li>
+                    <li>
+                        <span class="text-muted">Mère:</span> Annabelle
+                    </li> 
+                    <li>
+                        <span class="text-muted">Race:</span> Apis Mellifera
+                    </li> 
+                    <li>
+                        <span class="text-muted">Fécondation:</span> Artificielle
+                    </li> 
+                      <li>
+                        <span class="text-muted">Numéro:</span> 8
+                    </li> 
+                     <li>
+                        <span class="text-muted">Couleur:</span> rouge
+                    </li> 
+                       <li>
+                        <span class="text-muted">Clippage:</span> non
+                    </li> 
+                </ul>
+            </div><!-- End .client-block --> 
+        </div>
+    </div>
+    <span class="ext-raster-line-bottom"></span>
+</div>
+<div class="row ext-raster">
+    <div class="col-sm-6">
+        <div class="inner-padding">
+            <div class="client-block" style = "padding:0">
+                <ul class="client-block-list">
+                    <li>
+                        <span class="label label-info"><h3>Evènements à venir</h3></span> 
+                        <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul>
+                        </div><!-- End .dropdown -->
+                    </li> 
+                    <li>
+                        <span class="text-muted">05/04/2014</span> Sommmerance/ruche4/débroussailler
+                    </li>
+                    <li>
+                        <span class="text-muted">10/04/2014</span> Sommerance/ruche7/élevage reine
+                    </li> 
+                    <li>
+                        <span class="text-muted">17/04/2014:</span> Fléville/ruche2/visite complète
+                    </li> 
+                    <li>
+                        <span class="text-muted">20/04/2014:</span> Exermont/ruche9/transvasement
+                    </li>
+                </ul>
+            </div><!-- End .client-block --> 
+        </div>
+    </div>
+    <span class="breakpoint-sm ext-raster-line-6"></span>
+    <div class="col-sm-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    {#<th scope="col">#</th>#}
+                    <th scope="col">Historique Inspections</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/07/2012</td>
+                    <td>  <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul></td>
+                        </div><!-- End .dropdown -->
+                </tr>
+                
+                <tr>
+                    <td>14/07/2013</td>
+                    <td> <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul></td>
+                </tr>
+                <tr>
+                    <td>18/09/2013</td>
+                    <td> <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>04/03/2014</td>
+                     <td> <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul>
+                     </td>
+                </tr>  
+
+                    </tbody>
+                    </table>
+                    </div>
+                    <span class="ext-raster-line-bottom"></span>
+                    </div>
+                    <div class="row ext-raster">
+                        <div class="col-sm-6">
+                            <div class="inner-padding">
+                                <div class="client-block">
+                                    <div class="avatar">
+                                        <img src="images/users/user-5.jpg" alt=""/>
+                                        <span class="label label-default">Manager</span>
+                                    </div>
+                                    <ul class="client-block-list">
+                                        <li>
+                                            <h3>Martin Gardenar - <span class="text-muted">Manager</span></h3>
+                                            <div class="dropdown">                                
+                                                <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i>
+                                                    <i class="fa fa-caret-down"></i>
+                                                </a>
+                                                <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                                    </li>                        
+                                                </ul>
+                                            </div><!-- End .dropdown --> 
+                                        </li> 
+                                        <li>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis quam et purus tincidunt dignissim. Curabitur et aliquet nibh. 
+                                                Integer sed nibh facilisis, ultricies neque a, lacinia dolor.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="text-muted">Email:</span> youremail@site.com
+                                        </li>
+                                        <li>
+                                            <span class="text-muted">Company:</span> CreativeMilk
+                                        </li> 
+                                        <li>
+                                            <span class="text-muted">Phone:</span> +888-000-555
+                                        </li> 
+                                        <li>
+                                            <span class="text-muted">Mobile:</span> +321-645-5556
+                                        </li>
+                                    </ul>
+                                </div><!-- End .client-block --> 
+                            </div>
+                        </div>
+                        <span class="breakpoint-sm ext-raster-line-6"></span>
+                        <div class="col-sm-6">
+                            <div class="inner-padding">
+                                <div class="client-block">
+                                    <div class="avatar">
+                                        <img src="images/users/user-3.jpg" alt=""/>
+                                        <span class="label label-default">Developer</span>
+                                    </div>
+                                    <ul class="client-block-list">
+                                        <li>
+                                            <h3>Wyatt Brooke - <span class="text-muted">Developer</span></h3>
+                                            <div class="dropdown">                                
+                                                <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i>
+                                                    <i class="fa fa-caret-down"></i>
+                                                </a>
+                                                <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                                    </li>                        
+                                                </ul>
+                        </div><!-- End .dropdown -->
+                    </li>
+                    <li>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis quam et purus tincidunt dignissim. Curabitur et aliquet nibh. 
+                            Integer sed nibh facilisis, ultricies neque a, lacinia dolor.
+                        </p>
+                    </li>
+                    <li>
+                        <span class="text-muted">Email:</span> youremail@site.com
+                    </li>
+                    <li>
+                        <span class="text-muted">Company:</span> CreativeMilk
+                    </li> 
+                    <li>
+                        <span class="text-muted">Phone:</span> +888-000-555
+                    </li> 
+                    <li>
+                        <span class="text-muted">Mobile:</span> +321-645-5556
+                    </li> 
+                </ul>
+            </div><!-- End .client-block --> 
+        </div>
+    </div>
+    <span class="ext-raster-line-bottom"></span>
+</div>
+<div class="row ext-raster">
+    <div class="col-sm-6">
+        <div class="inner-padding">
+            <div class="thumbs-list">
+                <ul>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li> 
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li> 
+                    <li><a href="#"><img class="media-object" src="holder.js/95x95/karma-grey" alt=""/></a></li>                                      
+                </ul>                                                                    
+            </div><!-- End .thumbs-list -->
+        </div>
+    </div>
+    <span class="breakpoint-sm ext-raster-line-6"></span>
+    <div class="col-sm-6">
+        <div class="inner-padding">
+            <div class="client-block">
+                <div class="avatar">
+                    <img src="images/users/user-11.jpg" alt=""/>
+                    <span class="label label-default">Designer</span>
+                </div>
+                <ul class="client-block-list">
+                    <li>
+                        <span class="label label-success">Designer</span> 
+                        <h3>Carl Bergen</h3>
+                        <div class="dropdown">                                
+                            <a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul role="menu" class="dropdown-menu pull-right ext-dropdown-icons-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-edit"></i> Edit Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-trash-o"></i> Delete Client</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-cog"></i> Settings Client</a>
+                                </li>                        
+                            </ul>
+                        </div><!-- End .dropdown -->
+                    </li> 
+                    <li>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis quam et purus tincidunt dignissim. Curabitur et aliquet nibh. 
+                            Integer sed nibh facilisis, ultricies neque a, lacinia dolor.
+                        </p>
+                    </li>
+                    <li>
+                        <span class="text-muted">Email:</span> youremail@site.com
+                    </li>
+                    <li>
+                        <span class="text-muted">Company:</span> CreativeMilk
+                    </li> 
+                    <li>
+                        <span class="text-muted">Phone:</span> +888-000-555
+                    </li> 
+                    <li>
+                        <span class="text-muted">Mobile:</span> +321-645-5556
+                    </li>
+                </ul>
+            </div><!-- End .client-block --> 
+            <div class="spacer-30"></div> 
+        </div>                    	
+    </div>
+</div>
+
+
+
+<br/>
+<ul class="record_actions">
+    <a href="{{ path('ajouterruche_edit', { 'id': entity.id })}}" class="btn btn-info">Editer</a>
+    <a href="{{path('ajouterruche')}}" class="btn btn-info">Retour à la liste</a>
+
+</ul>
+
+{% endblock %}

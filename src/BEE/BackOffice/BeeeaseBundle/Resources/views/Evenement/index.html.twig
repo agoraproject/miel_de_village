@@ -1,0 +1,45 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block window  -%}
+ <div class="inner-padding">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Rucher</th>
+                <th>Ruche</th>
+                <th>Date min</th>
+                <th>Date max</th>
+               {# <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Effectué</th>
+                <th>Notes</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.titre }}</td>
+                <td>{{ entity.rucher}}</td>
+                <td>{{ entity.ruche }}</td>
+                <td>{% if entity.dateMin %}{{ entity.dateMin|date('d/m/Y') }}{% endif %}</td>
+                <td>{% if entity.dateMax %}{{ entity.dateMax|date('d/m/Y') }}{% endif %}</td>
+                {#<td>{% if entity.dateDebut %}{{ entity.dateDebut|date('d/m/Y H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dateFin %}{{ entity.dateFin|date('d/m/Y s:i:H') }}{% endif %}</td>
+                <td>{{ entity.actionListe }}</td>
+                <td>{{ entity.effectuer }}</td>
+                <td>{{ entity.notes }}</td>#}
+                 <td> <a href="{{path('evenement_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+        {% endfor %}
+        </tbody>
+    </table>
+ <ul>
+          <div class="spacer-20"></div>
+          <a href="{{ path('evenement_new') }}" class="btn btn-default"style=>Ajouter</a>
+  </ul>
+</div>
+    {% endblock %}

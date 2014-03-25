@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block window  -%}
+    <h3>Apiclass</h3>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Buckfast</th>
+                <td>{{ entity.buckfast }}</td>
+            </tr>
+            <tr>
+                <th>Linguistica</th>
+                <td>{{ entity.linguistica }}</td>
+            </tr>
+            <tr>
+                <th>Carnica</th>
+                <td>{{ entity.carnica }}</td>
+            </tr>
+            <tr>
+                <th>Cecropia</th>
+                <td>{{ entity.cecropia }}</td>
+            </tr>
+            <tr>
+                <th>Cypria</th>
+                <td>{{ entity.cypria }}</td>
+            </tr>
+            <tr>
+                <th>Anatolia</th>
+                <td>{{ entity.anatolia }}</td>
+            </tr>
+            <tr>
+                <th>Vaucasica</th>
+                <td>{{ entity.vaucasica }}</td>
+            </tr>
+            <tr>
+                <th>Mellifera</th>
+                <td>{{ entity.mellifera }}</td>
+            </tr>
+            <tr>
+                <th>Intermissa</th>
+                <td>{{ entity.intermissa }}</td>
+            </tr>
+            <tr>
+                <th>Lamarckii</th>
+                <td>{{ entity.lamarckii }}</td>
+            </tr>
+            <tr>
+                <th>Sahariensis</th>
+                <td>{{ entity.sahariensis }}</td>
+            </tr>
+            <tr>
+                <th>Adansonii</th>
+                <td>{{ entity.adansonii }}</td>
+            </tr>
+            <tr>
+                <th>Syriava</th>
+                <td>{{ entity.syriava }}</td>
+            </tr>
+            <tr>
+                <th>Meda</th>
+                <td>{{ entity.meda }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('apiclass') }}">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('apiclass_edit', { 'id': entity.id }) }}">
+            Editer
+        </a>
+    </li>
+    
+</ul>
+{% endblock %}

@@ -1,0 +1,46 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Transvasement</h3>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Date de transvasement</th>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            </tr>
+             <tr>
+                <th>Origine de la ruche</th>
+                <td>{{ entity.origineRuche }}</td>
+            </tr>
+            <tr>
+                <th>Source de la colonie</th>
+                <td>{{ entity.sourceColonie }}</td>
+            </tr>
+             <tr>
+                <th>Type de ruche</th>
+                <td>{{ entity.typeRuche }}</td>
+            </tr>
+             <tr>
+                <th>Nbre de cadres</th>
+                <td>{{ entity.nbreCadres }}</td>
+            </tr>
+             <tr>
+                <th>Fabrication</th>
+                <td>{{ entity.fabrication }}</td>
+             </tr>
+              <tr>
+                <th>Type de plancher</th>
+                <td>{{ entity.typePlancher }}</td>
+            </tr>
+                <tr>
+                <th>Notes</th>
+                <td>{{ entity.notes }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="record_actions">
+        <a href="{{ path('transvasement_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('transvasement')}}" class="btn btn-default">Retour à la liste</a>
+    </ul>
+{% endblock %}

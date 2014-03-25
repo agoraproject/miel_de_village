@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block window  -%}
+    <h3>Ajouter un résultat Apiclass</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('apiclass') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

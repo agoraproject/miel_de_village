@@ -1,0 +1,92 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block window  -%}
+ <div class="inner-padding">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Ruche</th>
+                <th scope="col">Date</th>
+                {#<th>Activité au trou d'envol</th>#}
+                {#<th>Oeufs vus</th>#}
+                {#<th>Reine vue</th>#}
+                {#<th>Moisissure</th>#}
+                {#<th>Abeilles au sol visite</th>#}
+                {#<th>T°</th>#}
+               {#<th>Vent</th>#}
+                {#<th>Tenue au cadre</th>#}
+                {#<th>Cadre de couvain ferme</th>#}
+                {#<th>Cadre de couvain ouvert</th>#}
+                {#<th>Cadre de couvain mâle</th>#}
+               {#<th>Cadre de miel</th>#}
+                {#<th>Cadre de pollen</th>#}
+                {#<th>Peuplement</th>#}
+                {#<th>Repartition du couvain</th>#}
+                {#<th>Qte cellule royale</th>#}
+                {#<th>Cellule royale d'essaimage</th>#}
+                {#<th>Cellule royale de supersedure</th>#}
+                {#<th>Cellule royale de sauveté</th>#}
+                {#<th>Poids inspection</th>#}
+                {#<th>Abeilles trainantes</th>#}
+                {#<th>Abeilles ailes déformées</th>#}
+                {#<th>Varroa abeilles</th>#}
+                {#<th>Fecondité éval</th>#}
+                {#<th>Ardeur travail éval</th>#}
+                {#<th>Resistance maladie éval</th>#}
+                {#<th>Douceur éval</th>#}
+                {#<th>Hivernage éval</th>#}
+                {#<th>Propolis éval</th>#}
+                {#<th>Notes</th>#}
+                <th scope="col">Actions</th> 
+           
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.ruche }}</td>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            {#    <td>{{ entity.activiteTrouEnvol }}</td>
+                <td>{{ entity.oeufsVus }}</td>
+                <td>{{ entity.reineVue }}</td>
+                <td>{{ entity.moisissure }}</td>
+                <td>{{ entity.abeillesSolVisite }}</td>
+                <td>{{ entity.tMeteo }}</td>
+                <td>{{ entity.vent }}</td>
+                <td>{{ entity.tenueCadre }}</td>
+                <td>{{ entity.cadreCouvainFerme }}</td>
+                <td>{{ entity.cadreCouvainOuvert }}</td>
+                <td>{{ entity.cadreCouvainMale }}</td>
+                <td>{{ entity.cadreMiel }}</td>
+                <td>{{ entity.cadrePollen }}</td>
+                <td>{{ entity.peuplement }}</td>
+                <td>{{ entity.repartitionCouvain }}</td>
+                <td>{{ entity.qteCelluleRoyale }}</td>
+                <td>{{ entity.celluleRoyaleEssaimage }}</td>
+                <td>{{ entity.celluleRoyaleSupersedure }}</td>
+                <td>{{ entity.celluleRoyaleSauvete }}</td>
+                <td>{{ entity.poidsInspection }}</td>
+                <td>{{ entity.abeillesTrainantes }}</td>
+                <td>{{ entity.abeillesAilesDeformees }}</td>
+                <td>{{ entity.varroaAbeilles }}</td>
+                <td>{{ entity.feconditeEval }}</td>
+                <td>{{ entity.ardeurTravailEval }}</td>
+                <td>{{ entity.resistanceMaladieEval }}</td>
+                <td>{{ entity.douceurEval }}</td>
+                <td>{{ entity.hivernageEval }}</td>
+                <td>{{ entity.propolisEval }}</td>
+                <td>{{ entity.notes }}</td>#}
+                <td> <a href="{{path('inspection_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <ul>
+          <div class="spacer-10"></div>
+          <a href="{{ path('inspection_new') }}" class="btn btn-default"style="float:right">Ajouter</a>
+    </ul>
+    </div>
+    {% endblock %}

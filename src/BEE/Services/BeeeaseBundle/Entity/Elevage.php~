@@ -1,0 +1,136 @@
+<?php
+
+namespace BEE\Services\BeeeaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Elevage
+ *
+ * @ORM\Table(name="elevage")
+ * @ORM\Entity(repositoryClass="BEE\Services\BeeeaseBundle\Entity\ElevageRepository")
+ */
+class Elevage
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stade_introduction", type="string", length=50)
+     */
+    private $stadeIntroduction;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_elevage", type="date")
+     */
+    private $dateElevage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbre_greffage", type="integer")
+     */
+    private $nbreGreffage;
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\Reine")
+     * @var type 
+     */
+    protected $reine;
+    
+    function __construct() {
+        
+    }
+
+        /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set stadeIntroduction
+     *
+     * @param string $stadeIntroduction
+     * @return Elevage
+     */
+    public function setStadeIntroduction($stadeIntroduction)
+    {
+        $this->stadeIntroduction = $stadeIntroduction;
+    
+        return $this;
+    }
+
+    /**
+     * Get stadeIntroduction
+     *
+     * @return string 
+     */
+    public function getStadeIntroduction()
+    {
+        return $this->stadeIntroduction;
+    }
+
+    /**
+     * Set dateElevage
+     *
+     * @param \DateTime $dateElevage
+     * @return Elevage
+     */
+    public function setDateElevage($dateElevage)
+    {
+        $this->dateElevage = $dateElevage;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateElevage
+     *
+     * @return \DateTime 
+     */
+    public function getDateElevage()
+    {
+        return $this->dateElevage;
+    }
+
+    /**
+     * Set nbreGreffage
+     *
+     * @param integer $nbreGreffage
+     * @return Elevage
+     */
+    public function setNbreGreffage($nbreGreffage)
+    {
+        $this->nbreGreffage = $nbreGreffage;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbreGreffage
+     *
+     * @return integer 
+     */
+    public function getNbreGreffage()
+    {
+        return $this->nbreGreffage;
+    }
+    public function __toString() {
+        
+    }
+
+}

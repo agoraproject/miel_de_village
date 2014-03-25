@@ -1,0 +1,61 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+
+        <a href="{{ path('rucher_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{ path('ruche_new') }}" class="btn btn-default">Ajouter une ruche</a>
+        <a href="{{ path('transvasement_new') }}" class="btn btn-default">Transvaser une ruche</a>
+        <a href="{{path('rucher')}}" class="btn btn-default">Retour à la liste</a>
+
+{% endblock %}
+{% block window %}
+<div class="inner-padding">
+<div>
+ 
+    <table class="record_properties">
+        <tbody>
+      
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ entity.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ entity.cp }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ entity.ville }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ entity.pays }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ entity.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ entity.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Altitude</th>
+                <td>{{ entity.altitude }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        
+</div>
+{% endblock %}

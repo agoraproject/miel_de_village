@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Controller/InspectionController.php</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Form/AjouterRucheType.php</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/Rucher/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/Reine/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/AjouterRuche/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/Form/fields.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Form/InspectionType.php</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/Inspection/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Controller/AjouterRucheController.php</file>
+            <file>file:/C:/xampp/htdocs/miel_de_village/src/BEE/BackOffice/BeeeaseBundle/Resources/views/Inspection/index.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

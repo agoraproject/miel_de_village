@@ -1,0 +1,33 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des fleurs</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Notes</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.notes }}</td>
+                <td> <a href="{{ path('fleur_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td> <a href="{{ path('fleur_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('fleur_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

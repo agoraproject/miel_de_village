@@ -1,0 +1,43 @@
+{%extends "::layout.html.twig"%}
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+{% block window %}
+<div class="inner-padding">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+               {#<th>Date de création</th>#}
+                <th scope="col">Nom</th>
+                {#<th>Rucher</th>#}
+                {#<th>Statut</th>#}
+                {#<th>Type de ruche</th>#}
+                {#<th>Nbre de cadres</th>
+                {#<th>Source de la colonie</th>#}
+                {#<th>Fabrication</th>#}
+                {#<th>Type de Plancher</th>#}
+                 <th scope="col">Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                {#<td>{{ entity.date|date('d/m/Y') }}</td>#}
+                 <td>{{ entity.nom }}</td>
+                {#<td>{{ entity.rucher }}</td>#}
+                {#<td>{{ entity.statut }}</td>#}
+                {#<td>{{ entity.typeRuche }}</td>#}
+                {#<td>{{ entity.transvasement.nbreCadres }}</td>
+               {#<td>{{ entity.sourceColonie }}</td>#}
+                {#<td>{{ entity.fabrication }}</td>#}
+                {#<td>{{ entity.typePlancher }}</td>#}
+                 <td> <a href="{{path('ruche_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+          <div class="spacer-10"></div>
+          <a href="{{ path('ruche_new') }}" class="btn btn-default">Ajouter</a>
+    </ul>
+</div>
+    {% endblock %}
+ 

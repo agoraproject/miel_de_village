@@ -1,0 +1,40 @@
+security:
+    #encodage des mots de passe
+    encoders:
+        BEE\UserBundle\Entity\User: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    #fournisseur d'utilisateurs fourni par FOSUB
+    providers:
+        main:
+            id: fos_user.user_provider.username
+    #pare-feu :vérifie l'identité
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        
+        main_login:
+            #on autorise les anonymes sur ce par-feu
+            pattern:   ^/login$
+            anonymous: true 
+        main:
+            pattern:   ^/
+            anonymous: false
+            provider:  main
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+            logout:
+                path:   fos_user_security_logout
+                target: /            
+            remember_me:
+                key:        %secret% # %secret% est un paramètre de parameters.yml
+            
+            
+    access_control:
+        - { path: ^/actionliste, roles: ROLE_ADMIN }
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+ 

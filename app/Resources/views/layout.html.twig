@@ -1,0 +1,153 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<header>
+    <div class="container"></div>
+</header>
+<div id="container" class="clearfix">              
+        <aside id="sidebar-main" class="sidebar">
+        <div class="sidebar-logo">
+        <a href="index.html" id="logo-big"><h1>Beeease</h1><h2>Easy beekeeping</h2></a>
+    </div><!-- End .sidebar-logo -->
+    <div class="sidebar-module"> 
+        <div class="sidebar-profile">
+            <img src="images/users/user-1.jpg" alt="" class="avatar"/>
+           {# <span class="indicator-dot">2</span>#}
+            <ul class="sidebar-profile-list">
+                <li><h3>Bonjour, {{ app.user.username }}</h3></li>
+                <li><a href="{{ path('fos_user_profile_show') }}">Profile</a>  |  <a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+            </ul>
+        </div><!-- End .sidebar-profile -->
+    </div><!-- End .sidebar-module --> 
+    <div class="sidebar-line"><!-- A seperator line --></div>
+    
+    <!-- * Tabs can be removed, if so dont forget * -->
+    <!-- * to remove the .tab-pane divs(wrapper). * -->
+
+    <ul class="ext-tabs-sidebar">
+        <li class="active">
+            <a href="#sidebar-tab-1"><i class="fa fa-bars"></i> Navigation</a>
+        </li>
+        <li>
+            <a href="#sidebar-tab-2"><i class="fa fa-folder"></i> Dossiers</a>
+        </li>            
+    </ul><!-- End .ext-tabs-sidebar -->
+    <div class="tab-content">
+        <div id="sidebar-tab-1" class="tab-pane active clearfix">
+
+            <!-- ********** -->
+            <!-- NEW MODULE -->
+            <!-- ********** -->
+
+            <div class="sidebar-module">
+            {% include '::menu.html.twig' %}
+            </div><!-- End .sidebar-module -->                                     
+        </div>                
+        <div id="sidebar-tab-2" class="tab-pane clearfix">
+
+            <!-- ********** -->
+            <!-- NEW MODULE -->
+            <!-- ********** -->
+
+            <div class="sidebar-module"> 
+                <ul class="easyfiletree">
+                    <li class="eft-open"><i class="fa fa-folder-open"></i>Folder 1
+                        <ul>
+                            <li><i class="fa fa-file-text"></i>Item 1.1</li>
+                            <li><i class="fa fa-file"></i>Item 1.2</li>
+                            <li><i class="fa fa-link"></i><a href="#">Item 1.3 (link)</a></li>
+                        </ul>
+                    </li>
+                    <li class="eft-open"><i class="fa fa-folder-open"></i>Folder 2
+                        <ul>
+                            <li class="eft-open"><i class="fa fa-folder-open"></i>Subfolder 2.1
+                                <ul>
+                                    <li><i class="fa fa-file"></i>File 2.1.1</li>
+                                    <li><i class="fa fa-picture-o"></i>File 2.1.2</li>
+                                </ul>
+                            </li>
+                            <li><i class="fa fa-file"></i>File 2.2</li>
+                        </ul>
+                    </li>
+                    <li class="eft-closed"><i class="fa fa-folder"></i>Folder 3 (closed)
+                        <ul>
+                            <li><i class="fa fa-file"></i>File 3.1</li>
+                        </ul>
+                    </li>
+                    <li><i class="fa fa-link"></i><a href="#">File 4 (link)</a></li>
+                    <li><i class="fa fa-file-text"></i>File 5</li>
+                    <li><i class="fa fa-file"></i>File 6</li>
+                </ul>
+            </div><!-- End .sidebar-module --> 
+        </div>
+    </div><!-- End .tab-content -->
+</aside><!-- End aside -->          
+<div id="main" class="clearfix">
+                <header id="header-main">
+        <div class="header-main-top">
+                <div class="pull-left">        
+                <a href="index.html" id="logo-small"><h4>karma</h4><h5>/webapp</h5></a>
+            </div>
+            <div class="pull-right">
+                                        <a href="#" id="responsive-menu-trigger">
+                        <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div><!-- End #header-main-top -->
+        <div class="header-main-bottom">
+                {#<div class="pull-left">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href ="{{ path('home') }}">Home</a>
+                        </li>
+                          <li>
+                            <a href ="#">Library</a>
+                        </li>
+                    </ul>
+            </div>#}
+            <div class="pull-right">
+               <!-- // text-->
+            </div> 
+        </div><!-- End #header-main-bottom -->            
+    </header><!-- End #header-main --> 
+    <div id="content" class="clearfix">                
+        <header id="header-sec"> 
+                <div class="inner-padding">       
+                <div class="dashboard" style="">
+                   {% block headerTitle %}{% endblock %}             
+                </div>
+                {#<div class="pull-right">
+                    // buttons/text/dropdown
+                </div>#}
+            </div><!-- End .inner-padding -->   
+        </header><!-- End #header-sec --> 
+        <div class="window">
+           
+            <div class="actionbar">
+                <div class="pull-left">
+                
+                       {% block action %}{% endblock %}
+              
+             
+                    <!--// buttons/text/dropdown  -->                    
+                </div>    
+            </div><!-- End .actionbar-->  
+            
+          {# <div class="inner-padding">#}
+                {% block window %} {% endblock %}
+                                <!--</div>--> <!-- End .inner-padding -->
+        {#</div#}<!-- End .window -->                    
+        {#<footer id="footer-main" class="footer-sticky">
+            <div class="footer-main-inner">
+                <div class="pull-left">
+                    // buttons/text/dropdown
+                </div> 
+                <div class="pull-right">
+                    // buttons/text/dropdown
+                </div> 
+            </div><!-- End .footer-main-inner -->   
+        </footer><!-- End #footer-main --> #}
+    </div><!-- End #content -->  
+</div><!-- End #main -->       
+</div><!-- End #container --> 
+{% endblock %}

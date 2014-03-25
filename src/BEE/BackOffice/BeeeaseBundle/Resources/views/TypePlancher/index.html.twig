@@ -1,0 +1,28 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Type de plancher</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Libelle</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td> <a href="{{path('typeplancher_edit', {'id': entity.id})}}" >Editer</a></td>
+                <td> <a href="{{path('typeplancher_delete', {'id': entity.id})}}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <a href="{{ path('typeplancher_new') }}">
+            Ajouter
+        </a>
+    </ul>
+    {% endblock %}

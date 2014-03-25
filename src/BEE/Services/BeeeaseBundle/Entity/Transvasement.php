@@ -1,0 +1,332 @@
+<?php
+
+namespace BEE\Services\BeeeaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transvasement
+ *
+ * @ORM\Table(name="transvasement")
+ * @ORM\Entity(repositoryClass="BEE\Services\BeeeaseBundle\Repository\TransvasementRepository")
+ */
+class Transvasement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date",nullable = false)
+     */
+    private $date;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbre_cadres", type="integer")
+     */
+    private $nbreCadres;
+
+    
+    
+    /**
+     * 
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\Ruche", inversedBy="transvasements")
+     * @var string
+     * @ORM\JoinColumn(name="origine_ruche_id") 
+     * @ORM\JoinColumn(nullable=true)
+     * 
+     */
+    
+    
+    
+    private $origineRuche;
+   /**
+    *
+    * @var text 
+    * @ORM\Column(name="notes", type="string", length=255,nullable = true)
+    */
+    private $notes;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\TypeRuche")
+     * @var integer
+     * @ORM\JoinColumn(name="type_ruche_id") 
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $typeRuche;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\TypePlancher")
+     * @var integer 
+     * @ORM\JoinColumn(name="type_plancher_id") 
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $typePlancher;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\Fabrication")
+     * @var integer 
+     * @ORM\JoinColumn(name="fabrication_id") 
+     * @ORM\JoinColumn(nullable=false)
+     * 
+     */
+    protected $fabrication;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\SourceColonie")
+     * @var integer 
+     * @ORM\JoinColumn(name="source_colonie_id") 
+     * @ORM\JoinColumn(nullable=false)
+     * 
+     */
+    protected $sourceColonie;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="BEE\Services\BeeeaseBundle\Entity\Ruche", inversedBy="transvasements")
+     * @var integer
+     * @ORM\JoinColumn(name="ruche_id") 
+     * @ORM\JoinColumn(nullable=false)
+     * 
+     */
+    protected $ruche;
+    
+    function __construct() {
+        
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Transvasement
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set nbreCadres
+     *
+     * @param integer $nbreCadres
+     * @return Transvasement
+     */
+    public function setNbreCadres($nbreCadres)
+    {
+        $this->nbreCadres = $nbreCadres;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbreCadres
+     *
+     * @return integer 
+     */
+    public function getNbreCadres()
+    {
+        return $this->nbreCadres;
+    }
+
+    /**
+     * Set origineRuche
+     *
+     * @param string $origineRuche
+     * @return Transvasement
+     */
+    public function setOrigineRuche($origineRuche)
+    {
+        $this->origineRuche = $origineRuche;
+    
+        return $this;
+    }
+
+    /**
+     * Get origineRuche
+     *
+     * @return string 
+     */
+    public function getOrigineRuche()
+    {
+        return $this->origineRuche;
+    }
+
+  
+
+
+    /**
+     * Set typeRuche
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\TypeRuche $typeRuche
+     * @return Transvasement
+     */
+    public function setTypeRuche(\BEE\Services\BeeeaseBundle\Entity\TypeRuche $typeRuche = null)
+    {
+        $this->typeRuche = $typeRuche;
+    
+        return $this;
+    }
+
+    /**
+     * Get typeRuche
+     *
+     * @return \BEE\Services\BeeeaseBundle\Entity\TypeRuche 
+     */
+    public function getTypeRuche()
+    {
+        return $this->typeRuche;
+    }
+
+    /**
+     * Set typePlancher
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\TypePlancher $typePlancher
+     * @return Transvasement
+     */
+    public function setTypePlancher(\BEE\Services\BeeeaseBundle\Entity\TypePlancher $typePlancher = null)
+    {
+        $this->typePlancher = $typePlancher;
+    
+        return $this;
+    }
+
+    /**
+     * Get typePlancher
+     *
+     * @return \BEE\Services\BeeeaseBundle\Entity\TypePlancher 
+     */
+    public function getTypePlancher()
+    {
+        return $this->typePlancher;
+    }
+
+    /**
+     * Set fabrication
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Fabrication $fabrication
+     * @return Transvasement
+     */
+    public function setFabrication(\BEE\Services\BeeeaseBundle\Entity\Fabrication $fabrication = null)
+    {
+        $this->fabrication = $fabrication;
+    
+        return $this;
+    }
+
+    /**
+     * Get fabrication
+     *
+     * @return \BEE\Services\BeeeaseBundle\Entity\Fabrication 
+     */
+    public function getFabrication()
+    {
+        return $this->fabrication;
+    }
+
+    /**
+     * Set sourceColonie
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\SourceColonie $sourceColonie
+     * @return Transvasement
+     */
+    public function setSourceColonie(\BEE\Services\BeeeaseBundle\Entity\SourceColonie $sourceColonie = null)
+    {
+        $this->sourceColonie = $sourceColonie;
+    
+        return $this;
+    }
+
+    /**
+     * Get sourceColonie
+     *
+     * @return \BEE\Services\BeeeaseBundle\Entity\SourceColonie 
+     */
+    public function getSourceColonie()
+    {
+        return $this->sourceColonie;
+    }
+    
+    public function __toString() {
+        return $this->getRucheDestination();
+    }
+
+
+    /**
+     * Set ruche
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Ruche $ruche
+     * @return Transvasement
+     */
+    public function setRuche(\BEE\Services\BeeeaseBundle\Entity\Ruche $ruche = null)
+    {
+        $this->ruche = $ruche;
+    
+        return $this;
+    }
+
+    /**
+     * Get ruche
+     *
+     * @return \BEE\Services\BeeeaseBundle\Entity\Ruche 
+     */
+    public function getRuche()
+    {
+        return $this->ruche;
+    }
+
+    /**
+     * Set notes
+     *
+     * @param string $notes
+     * @return Transvasement
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+    
+        return $this;
+    }
+
+    /**
+     * Get notes
+     *
+     * @return string 
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+ 
+}

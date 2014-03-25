@@ -1,0 +1,140 @@
+{# src/BEE/UserBundle/Resources/views/Security/login.html.twig #}
+
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+  {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+  {% if error %}
+    <div class="alert alert-error">{{ error|trans }}</div>
+  {% endif %}
+    
+    <div id="container-login" class="clearfix"> 
+    <div class="spacer-40"></div>
+        <!-- remove this part -->
+        <!--<div id="demo-overview">
+            <a href="#">Dashboard</a>
+            |
+            <a href="reset.html">Reset</a>
+            |
+            <a href="signup.html">Signup</a>
+            |
+            <a href="login2.html">Login 2</a>
+            |
+            <a href="forgot.html">mot de passe oublié?</a>
+        </div>  -->
+        {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+       {% if error %}
+        <div class="alert alert-block alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4>Avertissement:</h4>
+            <p>{{ error.message }}</p>
+        </div>
+        {% endif %}
+        <div id="login-box">  
+                <div class="login-box-inner clearfix">
+                <header id="login-header">
+                    <a href="#" id="login-logo">
+                        <h1>Beeease</h1>
+                        <!--<h4>Easy Beekeeping</h4>-->
+                    </a>
+                    <div class="dropdown" id="lang">
+                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img src={{ asset('images/icons/flags/shiny/16/France.png') }} alt=""/>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul role="menu" class="dropdown-menu ext-flags pull-right">
+                            <li>
+                                <a href="#">Français <img src={{ asset('images/icons/flags/shiny/16/France.png') }} alt=""/></a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Anglais <img src={{ asset('images/icons/flags/shiny/16/United-Kingdom.png') }} alt=""/></a>
+                            </li>
+                            <li>
+                                <a href="#">Allemand <img src={{ asset('images/icons/flags/shiny/16/Germany.png') }} alt=""/></a>
+                            </li>
+                            <li>
+                                <a href="#">Chinois <img src={{ asset('images/icons/flags/shiny/16/China.png') }} alt=""/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="spacer-40"></div>	
+                <form action="{{ path('fos_user_security_check') }}" method="post"> 
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <!--<div class="row">  
+                        <div class="col-lg-12">	
+                                <label for="fc-id-1">{{ 'security.login.username'|trans }}</label>
+                        </div>
+                                        </div>-->                                       
+                        <div class="row">  
+                        <div class="col-lg-12">	
+                                <input type="text" name="_username" value="{{ last_username }}" class="form-control" placeholder="Entrer votre identifiant" id="fc-id-1" tabindex="1" required="required"/>
+                        </div>
+                                        </div>
+                    <div class="spacer-10"></div>
+                        <!--<div class="row">  
+                        <div class="col-lg-12">	
+                                <label for="fc-id-2">{{ 'security.login.password'|trans }}</label>
+                            <a href="#" id="showpassword-trigger" class="underline">Show password</a>
+                        </div>
+                                        </div>-->
+                        <div class="row">  
+                        <div class="col-lg-12">	
+                                <input type="password" name="_password" class="form-control" placeholder="Entrer votre mot de passe" id="fc-id-2" tabindex="2"  required="required/>
+                        </div>
+                                        </div>	
+                    <div class="spacer-10"></div>	
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pull-left">
+                                <label><input type="checkbox" tabindex="3" name = "_remember_me"/><span></span> Se souvenir de moi?</label>
+                            </div>
+                            <div class="pull-right">
+                                <a href="{{ path('fos_user_resetting_send_email') }}" class="underline">Mot de passe oublié</a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="spacer-15"></div>
+                    <div class="row">
+                                                <div class="col-lg-12">
+                                <!-- just for the demo....replace this with an form element -->
+                                <!--<a href="index.html" class="btn btn-default form-control" id="fake-submit" tabindex="4">Se connecter</a>-->
+                                <input type="submit" value="Se connecter" class="btn btn-default form-control"/>
+                        </div>
+                    </div>
+                    <div class="spacer-40"></div>                    
+                    <div class="or-line"><span>Où</span></div>                    
+                                        <div class="spacer-40"></div>                  
+                    <div class="row">
+                                                <div class="col-lg-12">
+                                                <a href="#" class="btn btn-block brand-facebook" tabindex="5">Se connecter avec Facebook</a> 
+                        </div>
+                    </div> 
+                    <div class="spacer-10"></div>      
+                    <div class="row">
+                                                <div class="col-lg-12">
+                                                <a href="#" class="btn btn-block brand-twitter" tabindex="6">Se connecter avec Twitter</a> 
+                        </div>
+                    </div> 
+                    <div class="spacer-40"></div>                    
+                    <div class="or-line"><span>Où</span></div>                    
+                                        <div class="spacer-40"></div>                    
+                    <div class="row">
+                                                <div class="col-lg-12">
+                                                <a href="signup.html" class="btn btn-block btn-success" tabindex="6">S'enregistrer maintenant</a>
+                        </div>
+                    </div>                     
+                </form>
+            </div>
+        </div>
+        {#<footer id="login-footer">
+            <strong>Copyright © 2013 creativemilk.net</strong>
+            <div class="spacer-5"></div>
+            <small>Lorem ipsum dolor sit amet, islum consectetur adipiscing elit. All rights reserved.</small>
+        </footer>#}
+    </div>
+    <div class="spacer-40"></div>
+    </div>
+{% endblock %}

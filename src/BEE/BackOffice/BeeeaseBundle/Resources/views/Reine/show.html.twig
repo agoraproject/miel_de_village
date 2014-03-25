@@ -1,0 +1,85 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+        <a href="{{ path('reine_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('reine')}}" class="btn btn-default">Retour à la liste</a>
+{% endblock %}
+
+{% block window -%}
+<div class="inner-padding">
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Mère</th>
+                <td>{{ entity.mere }}</td>
+            </tr>
+            <tr>
+                <th>Race</th>
+                <td>{{ entity.race }}</td>
+            </tr>
+              <tr>
+                <th>Provenance</th>
+                <td>{{ entity.provenance }}</td>
+            </tr>
+            <tr>
+                <th>Code éleveur</th>
+                <td>{{ entity.codeEleveur }}</td>
+            </tr>
+              <tr>
+                <th>Eleveur</th>
+                <td>{{ entity.eleveur }}</td>
+            </tr>
+            <tr>
+                <th>Fécondation</th>
+                <td>{{ entity.intituleFecondation }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{% if entity.dateNaissance %}
+                        {{ entity.dateNaissance|date('Y-m-d') }}
+                    {% endif %}
+                </td>
+            <tr>
+                <th>Date d'acquisition</th>
+                <td>{% if entity.dateNaissance %}
+                        {{ entity.dateAcquisition|date('Y-m-d') }}
+                    {% endif %}
+                </td>
+            </tr>
+             <tr>
+                <th>Numéro</th>
+                <td>{{ entity.numero }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ entity.couleur }}</td>
+            </tr>
+            <tr>
+                <th>Clippage</th>
+                <td>{{ entity.intituleClippage }}</td>
+            </tr>
+               <tr>
+                <th>Disparition de la reine</th>
+                <td>{{ entity.disparitionReine }}</td>
+            </tr>
+            <tr>
+                <th>Remarques</th>
+                <td>{{ entity.remarques }}</td>
+            </tr>
+        </tbody>
+    </table>
+ 
+</div>
+{% endblock %}
+    
+               
+                
+              
+               
+          

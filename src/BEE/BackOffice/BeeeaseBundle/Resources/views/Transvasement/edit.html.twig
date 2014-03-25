@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Transvasement</h3>
+
+    {{ form(edit_form) }}
+
+   <ul class="record_actions">
+        <li>
+            <a href="{{ path('transvasement') }}">
+                <a href="{{path('transvasement_delete', {'id': entity.id})}}" class="btn btn-default">Supprimer</a>
+                <a href="{{path('transvasement')}}" class="btn btn-default">Retour à la liste</a>
+        </li>
+    </ul>
+{% endblock %}

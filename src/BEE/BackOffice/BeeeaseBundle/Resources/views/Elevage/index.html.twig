@@ -1,0 +1,34 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Elevage</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Date d'élevage</th>
+                <th>Nombre de greffages</th>
+                <th>Reine</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.dateElevage %}{{ entity.dateElevage|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.nbreGreffage }}</td>
+                <td>{{ entity.reine }}</td>
+                <td> <a href="{{ path('elevage_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td> <a href="{{ path('elevage_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('elevage_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

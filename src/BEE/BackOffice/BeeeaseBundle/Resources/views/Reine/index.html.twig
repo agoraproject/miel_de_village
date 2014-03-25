@@ -1,0 +1,53 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block window -%}
+<div class="inner-padding">
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                {#<th>Mère</th>#}
+                {#<th>Race</th>#}
+                {#<th>Provenance</th>#}
+                {#<th>Eleveur</th>#}
+                {#<th>Code éleveur</th>#}
+                {#<th>Fécondation</th>#}
+                {#<th>Date de naissance</th>#}
+                {#<th>Date d'acquisition</th>#}
+                <th scope="col">Numero</th>
+                <th scope="col">Couleur</th>
+                {#<th>Clippage</th>#}
+                {#<th>Remarques</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                {#<td>{{ entity.mere }}</td>#}
+                {#<td>{{ entity.race }}</td>#}
+                {#<td>{{ entity.provenance }}</td>#}
+                {#<td>{{ entity.eleveur }}</td>#}
+                {#<td>{{ entity.codeEleveur }}</td>#}
+                {#<td>{{ entity.intituleFecondation }}</td>#}
+                {#<td>{% if entity.dateNaissance %}{{ entity.dateNaissance|date('d/m/Y') }}{% endif %}</td>#}
+                {#<td>{% if entity.dateAcquisition %}{{ entity.dateAcquisition|date('d/m/Y') }}{% endif %}</td>#}
+                <td>{{ entity.numero }}</td>
+                <td>{{ entity.couleur }}</td>
+                {#<td>{{ entity.clippage }}</td>#}
+                {#<td>{{ entity.remarques }}</td>#}
+                <td> <a href="{{path('reine_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+        <a href="{{ path('reine_new') }}" class="btn btn-default"style="margin:13px">Ajouter</a>
+    </ul>
+</div>
+    {% endblock %}

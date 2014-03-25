@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Ajouter un libelle disparition de la reine</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('disparitionreine') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

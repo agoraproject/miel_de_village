@@ -1,0 +1,44 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block window %}
+<div class="inner-padding"> 
+
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Rucher</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Reine</th>
+               {# <th>Source de la colonie</th>
+                <th>Fabrication</th>
+                <th>Typeruche</th>
+                <th>Typeplancher</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.rucher }}</td>
+                <td>{{ entity.statut }}</td>
+                <td>{{ entity.reine }}</td>
+                {#<td>{{ entity.typeRuche }}</td>
+                <td>{{ entity.typePlancher }}</td>#}
+                <td> <a href="{{path('ajouterruche_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+          
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+      
+    <ul>
+          <a href="{{ path('ajouterruche_new') }}" class="btn btn-default"style="margin:13px">Ajouter</a>
+          
+    </ul>
+</div>
+{% endblock %}

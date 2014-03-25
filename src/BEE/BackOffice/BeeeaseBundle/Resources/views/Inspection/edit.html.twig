@@ -1,0 +1,16 @@
+{%extends "::layout.html.twig"%}
+
+{% block action %}
+
+<ul class="record_actions">
+    <a href="{{path('inspection_delete', {'id': entity.id})}}" class="btn btn-default">Supprimer</a>
+    <a href="{{path('inspection')}}" class="btn btn-default">Retour à la liste</a>
+</ul>
+
+{% endblock %}
+{% block window  -%}
+    <h3>Inspection</h3><br/>
+
+    {{ form(edit_form) }}
+
+{% endblock %}

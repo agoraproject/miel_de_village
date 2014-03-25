@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block window  -%}
+    <h3>Nouvel élevage</h3>
+
+    {#{{ form(form) }}#}
+ <form action="{{ path('elevage_create') }}" method="post" {{ form_enctype(form) }}> 
+     {{ form_errors(form) }}
+ <div>
+    {{ form_label(form.dateElevage,"Date de l'élevage") }}
+    {{ form_errors(form.dateElevage) }}
+    {{ form_widget(form.dateElevage) }}
+</div>  
+       <div>
+    {{ form_label(form.nbreGreffage,"Nombre de greffage")}}
+    {{ form_errors(form.nbreGreffage) }}
+    {{ form_widget(form.nbreGreffage) }}
+</div> 
+   {{ form_rest(form) }}
+
+</form> 
+
+
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('elevage') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

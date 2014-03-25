@@ -1,0 +1,29 @@
+{%extends "::layout.html.twig"%}
+
+{% block action %}
+<ul class="record_actions">
+    <a href="{{ path('action_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+     <a href="{{path('action')}}" class="btn btn-default">Retour à la liste</a>
+</ul>
+{% endblock %}
+    
+{% block window  -%}
+    <h1>Action</h1><br>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Qte</th>
+                <td>{{ entity.qte }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+
+{% endblock %}

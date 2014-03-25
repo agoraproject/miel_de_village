@@ -1,0 +1,28 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des Eleveurs</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td><a href="{{ path('eleveur_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td><a href="{{ path('eleveur_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <a href="{{ path('eleveur_new') }}">
+            Ajouter
+        </a>
+    </ul>
+    {% endblock %}

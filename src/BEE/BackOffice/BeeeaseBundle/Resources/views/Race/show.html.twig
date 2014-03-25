@@ -1,0 +1,27 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h1>Race</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ entity.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('race') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('race_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+</ul>
+{% endblock %}

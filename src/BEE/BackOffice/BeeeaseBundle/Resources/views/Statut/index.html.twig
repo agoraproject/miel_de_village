@@ -1,0 +1,32 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Statut de la ruche</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Libelle</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td>
+              <td> <a href="{{path('statut_edit', {'id': entity.id})}}" class="btn btn-default">Editer</a></td>
+              <td> <a href="{{path('statut_delete', {'id': entity.id})}}" class="btn btn-default">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('statut_new') }}">
+               Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

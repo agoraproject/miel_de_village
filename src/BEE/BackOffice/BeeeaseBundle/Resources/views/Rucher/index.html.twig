@@ -1,0 +1,45 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block window %}
+<div class="inner-padding">
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Cp</th>
+                <th scope="col">Ville</th>
+                {#<th scope="col">Pays</th>#}
+                {#<th scope="col">Description</th>#}
+                {#<th scope="col">Latitude</th>#}
+                {#<th scope="col">Longitude</th>#}
+                {#<th scope="col">Altitude</th>#}
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.adresse }}</td>
+                <td>{{ entity.cp }}</td>
+                <td>{{ entity.ville }}</td>
+                {#<td>{{ entity.pays }}</td>#}
+               {# <td>{{ entity.description }}</td>#}
+                 {#<td>{{ entity.latitude }}</td>#}
+                 {#<td>{{ entity.longitude }}</td>#}
+                 {#<td>{{ entity.altitude }}</td>#}
+               
+                {#<td> <a href="{{path('rucher_edit', {'id': entity.id})}}" class="btn btn-default">Editer</a></td>#}
+                <td> <a href="{{path('rucher_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+   
+          <a href="{{ path('rucher_new') }}" class="btn btn-default"style="margin:13px">Ajouter</a>
+</div>
+{% endblock window %}

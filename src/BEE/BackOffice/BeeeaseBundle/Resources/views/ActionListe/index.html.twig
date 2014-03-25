@@ -1,0 +1,38 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des Actions</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Intitulé</th>
+                <th>Type d'action</th>
+                <th>Code action</th>
+                <th>Qte affichage</th>
+                <th>Unite quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td>{{ entity.typeAction }}</td>
+                <td>{{ entity.codeAction }}</td>
+                <td>{{ entity.qteAffichage }}</td>
+                <td>{{ entity.uniteQte }}</td>
+                <td><a href="{{ path('actionliste_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td><a href="{{ path('actionliste_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('actionliste_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

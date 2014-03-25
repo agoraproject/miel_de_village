@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Type de Plancher</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+   
+        <a href="{{ path('typeplancher') }}">
+            Retour à la liste 
+        </a>
+    
+</ul>
+{% endblock %}

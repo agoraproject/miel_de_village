@@ -1,0 +1,16 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+
+{% block action %}
+
+    <a href="{{path('recolte_delete', {'id': entity.id})}}" class="btn btn-default">Supprimer</a>
+    <a href="{{path('recolte')}}" class="btn btn-default">Retour à la liste</a>
+
+{% endblock %}
+
+{% block window  -%}
+<div class="inner-padding">     
+    {{ form(edit_form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h1>Couleur</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td> <a href="{{ path('liste_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td><a href="{{ path('liste_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('liste_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+        <h1>Race</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for race in races %}
+            <tr>
+                <td>{{ entity.libelle }}</td>
+                <td> <a href="{{ path('liste_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td><a href="{{ path('liste_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('liste_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

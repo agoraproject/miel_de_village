@@ -1,0 +1,35 @@
+{%extends "::layout.html.twig"%}
+
+{% block window %}
+    <h3>Liste des actions</h3><br/>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+             
+                <th scope="col">Date</th>
+                <th scope="col">Rucher</th>
+                <th scope="col">Ruche</th>
+                <th scope="col">Actions</th>
+                <th scope="col">Quantité d'actions</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.rucher }}</td>
+                <td>{{ entity.ruche }}</td>
+                <td>{{ entity.actionListe }}</td>
+                <td>{{ entity.qte }}</td>
+                <td> <a href="{{path('action_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <a href="{{ path('rucher_new') }}" class="btn btn-default"style="margin:13px">Ajouter</a>
+    </ul>
+{% endblock %}

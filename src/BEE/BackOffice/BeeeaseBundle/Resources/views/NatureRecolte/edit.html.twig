@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Nature de la récolte</h3>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('naturerecolte') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

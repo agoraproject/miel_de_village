@@ -1,0 +1,32 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Essaimage</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Reine</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+                <td>{{ entity.reine }}</td>
+                <td>  <a href="{{ path('essaimage_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td>  <a href="{{ path('essaimage_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('essaimage_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

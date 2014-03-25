@@ -1,0 +1,353 @@
+<?php
+
+namespace BEE\Services\BeeeaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ruche
+ *
+ * @ORM\Table(name="ruche")
+ * @ORM\Entity(repositoryClass="BEE\Services\BeeeaseBundle\Repository\RucheRepository")
+ */
+class Ruche
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=30)
+     */
+    private $nom;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\ChangementStatut", mappedBy="ruche")
+     * @var type 
+     */
+    private $changementStatut;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Transvasement", mappedBy="ruche")
+     * @var type 
+     */
+    private $transvasements;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Recolte", mappedBy="ruche")
+     * @var type 
+     */
+    private $recoltes;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Introduction", mappedBy="ruche")
+     * @var type 
+     */
+    private $introductions;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Action", mappedBy="ruche")
+     * @var type 
+     */
+    private $actions;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Inspection", mappedBy="ruche")
+     * @var type 
+     */
+    private $inspections;
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Evenement", mappedBy="ruche")
+     * @var type 
+     */
+    private $evenements;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="BEE\Services\BeeeaseBundle\Entity\Localisation", mappedBy="ruche")
+     * @var type 
+     */
+    
+    private $localisation;
+   
+    function __construct() {
+      $this->changementStatut =  new \Doctrine\Common\Collections\ArrayCollection(); 
+      $this->transvasements = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->recoltes = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->introductions = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->actions = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->inspections = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->evenements = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->localisations = new \Doctrine\Common\Collections\ArrayCollection();
+      
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Ruche
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+    public function __toString() {
+        return $this->getNom();
+    }
+
+
+    /**
+     * Add changementStatut
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\ChangementStatut $changementStatut
+     * @return Ruche
+     */
+    public function addChangementStatut(\BEE\Services\BeeeaseBundle\Entity\ChangementStatut $changementStatut)
+    {
+        $this->changementStatut[] = $changementStatut;
+    
+        return $this;
+    }
+
+    /**
+     * Remove changementStatut
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\ChangementStatut $changementStatut
+     */
+    public function removeChangementStatut(\BEE\Services\BeeeaseBundle\Entity\ChangementStatut $changementStatut)
+    {
+        $this->changementStatut->removeElement($changementStatut);
+    }
+
+    /**
+     * Get changementStatut
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getChangementStatut()
+    {
+        return $this->changementStatut;
+    }
+
+    /**
+     * Add transvasements
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Transvasement $transvasements
+     * @return Ruche
+     */
+    public function addTransvasement(\BEE\Services\BeeeaseBundle\Entity\Transvasement $transvasements)
+    {
+        $this->transvasements[] = $transvasements;
+    
+        return $this;
+    }
+
+    /**
+     * Remove transvasements
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Transvasement $transvasements
+     */
+    public function removeTransvasement(\BEE\Services\BeeeaseBundle\Entity\Transvasement $transvasements)
+    {
+        $this->transvasements->removeElement($transvasements);
+    }
+
+    /**
+     * Get transvasements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTransvasements()
+    {
+        return $this->transvasements;
+    }
+
+    /**
+     * Add recoltes
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Recolte $recoltes
+     * @return Ruche
+     */
+    public function addRecolte(\BEE\Services\BeeeaseBundle\Entity\Recolte $recoltes)
+    {
+        $this->recoltes[] = $recoltes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove recoltes
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Recolte $recoltes
+     */
+    public function removeRecolte(\BEE\Services\BeeeaseBundle\Entity\Recolte $recoltes)
+    {
+        $this->recoltes->removeElement($recoltes);
+    }
+
+    /**
+     * Get recoltes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRecoltes()
+    {
+        return $this->recoltes;
+    }
+
+    /**
+     * Add introductions
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Introduction $introductions
+     * @return Ruche
+     */
+    public function addIntroduction(\BEE\Services\BeeeaseBundle\Entity\Introduction $introductions)
+    {
+        $this->introductions[] = $introductions;
+    
+        return $this;
+    }
+
+    /**
+     * Remove introductions
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Introduction $introductions
+     */
+    public function removeIntroduction(\BEE\Services\BeeeaseBundle\Entity\Introduction $introductions)
+    {
+        $this->introductions->removeElement($introductions);
+    }
+
+    /**
+     * Get introductions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIntroductions()
+    {
+        return $this->introductions;
+    }
+
+    /**
+     * Add actions
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Action $actions
+     * @return Ruche
+     */
+    public function addAction(\BEE\Services\BeeeaseBundle\Entity\Action $actions)
+    {
+        $this->actions[] = $actions;
+    
+        return $this;
+    }
+
+    /**
+     * Remove actions
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Action $actions
+     */
+    public function removeAction(\BEE\Services\BeeeaseBundle\Entity\Action $actions)
+    {
+        $this->actions->removeElement($actions);
+    }
+
+    /**
+     * Get actions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getActions()
+    {
+        return $this->actions;
+    }
+
+    /**
+     * Add inspections
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Inspection $inspections
+     * @return Ruche
+     */
+    public function addInspection(\BEE\Services\BeeeaseBundle\Entity\Inspection $inspections)
+    {
+        $this->inspections[] = $inspections;
+    
+        return $this;
+    }
+
+    /**
+     * Remove inspections
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Inspection $inspections
+     */
+    public function removeInspection(\BEE\Services\BeeeaseBundle\Entity\Inspection $inspections)
+    {
+        $this->inspections->removeElement($inspections);
+    }
+
+    /**
+     * Get inspections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getInspections()
+    {
+        return $this->inspections;
+    }
+
+    /**
+     * Add evenements
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Evenement $evenements
+     * @return Ruche
+     */
+    public function addEvenement(\BEE\Services\BeeeaseBundle\Entity\Evenement $evenements)
+    {
+        $this->evenements[] = $evenements;
+    
+        return $this;
+    }
+
+    /**
+     * Remove evenements
+     *
+     * @param \BEE\Services\BeeeaseBundle\Entity\Evenement $evenements
+     */
+    public function removeEvenement(\BEE\Services\BeeeaseBundle\Entity\Evenement $evenements)
+    {
+        $this->evenements->removeElement($evenements);
+    }
+
+    /**
+     * Get evenements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEvenements()
+    {
+        return $this->evenements;
+    }
+}

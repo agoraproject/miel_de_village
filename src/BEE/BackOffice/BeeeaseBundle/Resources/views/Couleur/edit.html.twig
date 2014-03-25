@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Couleur</h3>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('couleur') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

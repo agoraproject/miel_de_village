@@ -1,0 +1,47 @@
+services:
+      RucherManager:
+        class: BEE\Services\BeeeaseBundle\Manager\RucherManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+      RucheManager:
+        class: BEE\Services\BeeeaseBundle\Manager\RucheManager
+        arguments: [@doctrine.orm.entity_manager]
+
+      ReineManager:
+        class: BEE\Services\BeeeaseBundle\Manager\ReineManager
+        arguments: [@doctrine.orm.entity_manager]
+
+      InspectionManager:
+        class: BEE\Services\BeeeaseBundle\Manager\InspectionManager
+        arguments: [@doctrine.orm.entity_manager]
+
+      EvenementManager:
+        class: BEE\Services\BeeeaseBundle\Manager\EvenementManager
+        arguments: [@doctrine.orm.entity_manager]
+      
+      typePlancherManager:
+        class: BEE\Services\BeeeaseBundle\Manager\TypePlancherManager
+        arguments: [@doctrine.orm.entity_manager]
+      
+      typeRucheManager:
+        class: BEE\Services\BeeeaseBundle\Manager\TypeRucheManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+      SourceColonieManager:
+        class: BEE\Services\BeeeaseBundle\Manager\SourceColonieManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+      StatutManager:
+        class: BEE\Services\BeeeaseBundle\Manager\StatutManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+      FabricationManager:
+        class: BEE\Services\BeeeaseBundle\Manager\FabricationManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+      TypeRecolteManager:
+        class: BEE\Services\BeeeaseBundle\Manager\TypeRecolteManager
+        arguments: [@doctrine.orm.entity_manager]
+        
+     
+      

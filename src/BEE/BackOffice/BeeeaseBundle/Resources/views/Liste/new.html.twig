@@ -1,0 +1,26 @@
+{%extends "::layout.html.twig"%}
+
+{% block window -%}
+    <h3>Ajouter une couleur</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('couleur') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+    <h3>Ajouter une race</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('couleur') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

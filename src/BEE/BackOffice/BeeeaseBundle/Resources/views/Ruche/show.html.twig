@@ -1,0 +1,73 @@
+{%extends "::layout.html.twig"%}
+
+{% block action %}
+
+    <a href="{{ path('action_new') }}" class="btn btn-default ">Action</a>
+    <a href="{{ path('evenement_new') }}" class="btn btn-default">Evènement</a>
+    <a href="{{ path('localisation_new') }}" class="btn btn-default">Déplacer</a>
+    <a href="{{ path('introduction_new') }}" class="btn btn-default">Introduire une reine</a>
+    <a href="{{ path('inspection_new') }}" class="btn btn-default">Inspection</a>
+    <a href="{{ path('transvasement_new') }}" class="btn btn-default">Transvasement</a>
+    <a href="{{ path('statut_new') }}" class="btn btn-default">Statut</a>
+    <a href="{{ path('recolte_new') }}" class="btn btn-default">Récolte</a>
+    <a href="{{ path('ruche_edit', { 'id': entity.id })}}" class="btn btn-default">Renommer</a>
+
+{% endblock %}
+     
+{% block window -%}
+    <h3>Ruche</h3><br/>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+      {#      <tr>
+                <th>Rucher</th>
+                <td>{{ currentLocalisation.rucher }}</td>
+            </tr>#}
+           {# <tr>
+                <th>Date de création</th>
+                <td>{{ entity.date }}</td>
+            </tr>
+          
+                <th>Rucher</th>
+                <td>{{ entity.rucher }}</td>
+            </tr>
+            {#  
+                <th>Statut</th>
+                <td>{{ entity.statut }}</td>
+            </tr>#}
+            {#  <tr>
+                <th>Type de ruche</th>
+                <td>{{ entity.typeRuche }}</td>
+            </tr>#}
+            {#   <tr>
+                <th>Nombre de cadres</th>
+                <td>{{ entity.nbreCadres }}</td>
+            </tr>#}
+           {#  <tr>
+                <th>Source de la colonie</th>
+                <td>{{ entity.sourceColonie }}</td>
+            </tr>#}
+          {#  <tr>
+                <th>Fabrication</th>
+                <td>{{ entity.fabrication }}</td>
+            </tr>#}
+        {#      <tr>
+                <th>Type de plancher</th>
+                <td>{{ entity.typePlancher }}</td>
+            </tr>#}
+        </tbody>
+    </table>
+    
+        
+    <ul class="record_actions">
+        <a href="{{ path('ruche_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('ruche')}}" class="btn btn-default">Retour à la liste</a>
+    </ul>
+
+ 
+
+{% endblock %}

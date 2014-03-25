@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Ajouter une condition météo</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cdtsmeteo') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

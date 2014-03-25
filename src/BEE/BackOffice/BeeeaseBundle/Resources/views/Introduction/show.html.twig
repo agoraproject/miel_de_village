@@ -1,0 +1,34 @@
+{%extends "::layout.html.twig"%}
+
+{% block window -%}
+    <h3>Introduction</h3>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('d/m/Y') }}</td>
+            </tr>
+              <tr>
+                <th>Ruche</th>
+                <td>{{ entity.ruche }}</td>
+            </tr>
+            <tr>
+                <th>Qte de reine</th>
+                <td>{{ entity.qteReine }}</td>
+            </tr>
+             <tr>
+                <th>Statut de la reine</th>
+                <td>{{ entity.statutReine }}</td>
+            </tr>
+               <tr>
+                <th>Elevage</th>
+                <td>{{ entity.elevage }}</td>
+            </tr>
+        </tbody>
+    </table>
+   <ul class="record_actions">
+        <a href="{{ path('introduction_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('introduction')}}" class="btn btn-default">Retour à la liste</a>
+   </ul>
+{% endblock %}

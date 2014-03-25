@@ -1,0 +1,59 @@
+{% extends '::base.html.twig' %}
+
+{% block window  -%}
+    <h3>Liste des résultats Apiclass</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Reine</th>
+                <th>Buckfast</th>
+                <th>Linguistica</th>
+                <th>Carnica</th>
+                <th>Cecropia</th>
+                <th>Cypria</th>
+                <th>Anatolia</th>
+                <th>Vaucasica</th>
+                <th>Mellifera</th>
+                <th>Intermissa</th>
+                <th>Lamarckii</th>
+                <th>Sahariensis</th>
+                <th>Adansonii</th>
+                <th>Syriava</th>
+                <th>Meda</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.reine }}</td>
+                <td>{{ entity.buckfast }}</td>
+                <td>{{ entity.linguistica }}</td>
+                <td>{{ entity.carnica }}</td>
+                <td>{{ entity.cecropia }}</td>
+                <td>{{ entity.cypria }}</td>
+                <td>{{ entity.anatolia }}</td>
+                <td>{{ entity.vaucasica }}</td>
+                <td>{{ entity.mellifera }}</td>
+                <td>{{ entity.intermissa }}</td>
+                <td>{{ entity.lamarckii }}</td>
+                <td>{{ entity.sahariensis }}</td>
+                <td>{{ entity.adansonii }}</td>
+                <td>{{ entity.syriava }}</td>
+                <td>{{ entity.meda }}</td>
+                <td><a href="{{ path('apiclass_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td><a href="{{ path('apiclass_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+
+          
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('apiclass_new') }}">
+               Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

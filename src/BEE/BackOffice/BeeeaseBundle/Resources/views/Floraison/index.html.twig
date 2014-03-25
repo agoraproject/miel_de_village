@@ -1,0 +1,34 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Liste des floraisons</h3>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Fleur</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.dateDebut %}{{ entity.dateDebut|date('d/m/Y') }}{% endif %}</td>
+                <td>{% if entity.dateFin %}{{ entity.dateFin|date('d/m/Y') }}{% endif %}</td>
+                <td>{{entity.fleur }}
+                <td> <a href="{{ path('floraison_edit', { 'id': entity.id }) }}">Editer</a></td>
+                <td> <a href="{{ path('floraison_delete', { 'id': entity.id }) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('floraison_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

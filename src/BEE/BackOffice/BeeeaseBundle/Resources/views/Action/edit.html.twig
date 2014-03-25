@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window -%}
+    <h3>Action</h3>
+    {% form_theme edit_form 'BEEBackOfficeBeeeaseBundle:Form:fields.html.twig' %}
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('action') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

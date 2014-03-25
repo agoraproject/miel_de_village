@@ -1,0 +1,14 @@
+{%extends "::layout.html.twig"%}
+
+{% block window  -%}
+    <h3>Ajouter une action</h3>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    
+       <a href="{{path('action')}}" class="btn btn-default">Retour à la liste des actions</a>
+       <a href="{{path('ruche')}}" class="btn btn-default">Retour à la liste des ruches</a>
+    
+</ul>
+{% endblock %}

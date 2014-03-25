@@ -1,0 +1,55 @@
+{%extends "::layout.html.twig"%}
+
+{% block action %}
+  <ul class="record_actions">
+        <a href="{{ path('evenement_edit', { 'id': entity.id })}}" class="btn btn-default">Editer</a>
+        <a href="{{path('evenement')}}" class="btn btn-default">Retour à la liste</a>
+   </ul>
+
+{% endblock %}
+
+{% block window  -%}
+    <h3>Evenement</h3><br/>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+             <tr>
+                <th>Rucher</th>
+                <td>{{ entity.rucher }}</td>
+            </tr>
+             <tr>
+                <th>Ruche</th>
+                <td>{{ entity.ruche }}</td>
+            </tr>
+            <tr>
+                <th>Date min</th>
+                <td>{{ entity.dateMin|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Date max</th>
+                <td>{{ entity.dateMax|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Date de debut</th>
+                <td>{{ entity.dateDebut|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Date de fin</th>
+                <td>{{ entity.dateFin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Effectué</th>
+                <td>{{ entity.effectuer }}</td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>{{ entity.notes }}</td>
+            </tr>
+        </tbody>
+    </table>
+  
+{% endblock %}

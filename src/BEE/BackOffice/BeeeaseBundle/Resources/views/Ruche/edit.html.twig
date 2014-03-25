@@ -1,0 +1,13 @@
+{%extends "::layout.html.twig"%}
+{% block window -%}
+    <h3>Ruche </h3>
+
+    {{ form(edit_form)class="col-sm-3" }}
+   <ul class="record_actions">
+        <li>
+            <a href="{{ path('ruche') }}">
+                <a href="{{path('ruche_delete', {'id': entity.id})}}">Supprimer</a>
+                <a href="{{path('ruche')}}" class=">Retour à la liste</a>
+        </li>
+    </ul>
+{% endblock %}

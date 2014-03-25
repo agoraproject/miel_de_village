@@ -1,0 +1,16 @@
+{%extends "::layout.html.twig"%}
+
+{% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
+   
+{% block action %}
+    <a href="{{path('rucher')}}" class="btn btn-default">Retour à la liste</a> 
+{% endblock %}
+
+{% block window %}
+    <div class="inner-padding">
+    {% form_theme form 'BEEBackOfficeBeeeaseBundle:Form:fields.html.twig' %}
+
+    {{ form(form) }}
+    </div>
+
+{% endblock %}

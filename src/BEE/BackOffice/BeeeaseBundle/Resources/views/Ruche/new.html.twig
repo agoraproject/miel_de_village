@@ -1,0 +1,15 @@
+{%extends "::layout.html.twig"%}
+
+{% block window -%}
+<div class="inner-padding">
+    <h3>Ajouter une ruche</h3><br/>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+       <a href="{{path('ruche')}}" class="btn btn-default">Retour à la liste</a>
+    </li>
+</ul>
+</div>
+{% endblock %}
