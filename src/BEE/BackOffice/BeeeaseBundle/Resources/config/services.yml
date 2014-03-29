@@ -42,6 +42,11 @@ services:
       TypeRecolteManager:
         class: BEE\Services\BeeeaseBundle\Manager\TypeRecolteManager
         arguments: [@doctrine.orm.entity_manager]
+    
+      BEE.BackOffice.twig.BEE_extension:
+        class: BEE\BackOffice\BeeeaseBundle\Twig\BEEExtension
+        tags:
+            - { name: twig.extension }
         
      
       

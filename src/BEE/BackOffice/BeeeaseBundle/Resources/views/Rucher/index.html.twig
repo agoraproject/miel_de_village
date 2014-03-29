@@ -2,9 +2,14 @@
 
 {% block headerTitle %}<h2>{{ headerTitle }}</h2>{% endblock %}
 
+{% block action %}
+    <a href="{{ path('rucher_new') }}" class="btn btn-default">Ajouter</a>
+
+{% endblock %}
+
 {% block window %}
 <div class="inner-padding">
-    <table  class="table table-bordered">
+    <table class="table table-bordered table-condensed table-striped">
         <thead>
             <tr>
                 <th scope="col">Nom</th>
@@ -33,13 +38,13 @@
                  {#<td>{{ entity.altitude }}</td>#}
                
                 {#<td> <a href="{{path('rucher_edit', {'id': entity.id})}}" class="btn btn-default">Editer</a></td>#}
-                <td> <a href="{{path('rucher_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+                <td><a href="{{path('rucher_show', {'id': entity.id})}}">Afficher</a>
+                     | 
+                    <a href="{{path('rucher_edit', {'id': entity.id})}}">Modifier</a>
+                    </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    
-   
-          <a href="{{ path('rucher_new') }}" class="btn btn-default"style="margin:13px">Ajouter</a>
 </div>
 {% endblock window %}

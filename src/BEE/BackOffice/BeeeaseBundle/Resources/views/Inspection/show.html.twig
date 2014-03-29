@@ -18,13 +18,15 @@
                 <th>Date</th>
                 <td>{{ entity.date|date('d/m/Y') }}</td>
             </tr>
+            {% if entity.activiteTrouEnvol != 0 %}
             <tr>
                 <th>Activité au trou d'envol</th>
                 <td>{{ entity.activiteTrouEnvol }}</td>
             </tr>
+            {% endif %}
             <tr>
                 <th>Oeufs vus</th>
-                <td>{{ entity.oeufsVus }}</td>
+                <td>{{ entity.oeufsVus|booltoyesno }}</td>
             </tr>
             <tr>
                 <th>Reine vue</th>

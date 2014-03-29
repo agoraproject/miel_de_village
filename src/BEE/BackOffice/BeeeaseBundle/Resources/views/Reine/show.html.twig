@@ -42,13 +42,13 @@
             <tr>
                 <th>Date de naissance</th>
                 <td>{% if entity.dateNaissance %}
-                        {{ entity.dateNaissance|date('Y-m-d') }}
+                        {{ entity.dateNaissance|date('d/m/Y') }}
                     {% endif %}
                 </td>
             <tr>
                 <th>Date d'acquisition</th>
                 <td>{% if entity.dateNaissance %}
-                        {{ entity.dateAcquisition|date('Y-m-d') }}
+                        {{ entity.dateAcquisition|date('d/m/Y') }}
                     {% endif %}
                 </td>
             </tr>

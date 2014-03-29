@@ -31,8 +31,8 @@
     {% if widget == 'single_text' %}
         {#{ block('form_widget_simple') }#}
         
-        <div class="input-group date" id="datepicker-form-2" data-date="" data-date-format="mm/dd/yy" style="width:180px">
-             <input {{ block('widget_attributes') }} class="form-control" size="16" type="date" value=""/>
+        <div class="input-group date" id="datepicker-form-2" data-date="" data-date-format="dd/mm/yyyy">
+             <input {{ block('widget_attributes') }} class="form-control" size="16" type="date" {% if value is not empty %}value="{{ value }}" {% endif %}/>
              <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
          </div>
     
@@ -86,3 +86,30 @@
     <textarea class = "form-control" {{ block('widget_attributes') }}>{{ value }}</textarea>
 {% endspaceless %}
 {% endblock textarea_widget %}
+
+{% block button_widget %}
+{% spaceless %}
+    <div class="form_row">
+        <div class="col-sm-3"> 
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+        </div>
+        <div class="col-sm-4"> 
+            <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ label|trans({}, translation_domain) }}</button>
+        </div>  
+    </div>
+    <div class="spacer-10"></div>
+{% endspaceless %}
+{% endblock button_widget %}
+  
+
+    
+    
+
+
+    {{ form_label(form) }}
+   
+    {{ form_errors(form) }} 
+    {{ form_widget(form) }}
+</div>    

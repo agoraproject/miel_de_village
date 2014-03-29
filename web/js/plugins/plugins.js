@@ -873,7 +873,8 @@ $(document).ready(function($){
 	**/	
 
 	$('#datepicker-1, #datepicker-2, #datepicker-3, #datepicker-4, #datepicker-form-1, #datepicker-form-2').datepicker({
-		format: 'mm-dd-yyyy'
+		format: 'dd/mm/yyyy',
+                language: 'fr'
 	});
 
     /* BOOTSTRAP ----------------------------------------------------------- */

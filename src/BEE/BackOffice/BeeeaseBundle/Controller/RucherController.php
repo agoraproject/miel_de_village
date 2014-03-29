@@ -171,9 +171,7 @@ class RucherController extends Controller
             'action' => $this->generateUrl('rucher_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Modifier','attr' => array('class' => 'btn btn-default'))); 
-
+        
         return $form;
     }
     /**

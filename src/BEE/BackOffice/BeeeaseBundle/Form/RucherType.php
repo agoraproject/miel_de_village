@@ -47,6 +47,11 @@ class RucherType extends AbstractType
                                 'attr' => array(
                                 'class' => 'form-control',
                                 'required' => false))) 
+            ->add('submit','submit',array(
+                                'label' => 'Enregistrer',
+                                'attr' => array(
+                                'class' => 'btn btn-default pull-right'
+                                ))) 
         ;
     }
     

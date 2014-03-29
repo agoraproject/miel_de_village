@@ -6,7 +6,7 @@
 <div class="inner-padding">
 
 
-    <table class="table table-bordered">
+    <table class="table table-bordered table-condensed table-striped">
         <thead>
             <tr>
                 <th scope="col">Nom</th>
@@ -41,7 +41,9 @@
                 <td>{{ entity.couleur }}</td>
                 {#<td>{{ entity.clippage }}</td>#}
                 {#<td>{{ entity.remarques }}</td>#}
-                <td> <a href="{{path('reine_show', {'id': entity.id})}}" class="btn btn-default">Show</a></td>
+                <td><a href="{{path('reine_show', {'id': entity.id})}}">Afficher</a>
+                     | 
+                    <a href="{{path('reine_edit', {'id': entity.id})}}">Modifier</a></td>
             </tr>
         {% endfor %}
         </tbody>

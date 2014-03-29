@@ -335,9 +335,9 @@ class Inspection
      */
     public function getOeufsVus()
     {
+        
         return $this->oeufsVus;
     }
-
  
     /**
      * Set moisissure
@@ -1011,10 +1011,10 @@ class Inspection
     /**
      * Add affections
      *
-     * @param \Sdz\BlogBundle\Entity\Affection $affections
+     * @param \BEE\Services\BeeeaseBundle\Entity\Affection $affections
      * @return Inspection
      */
-    public function addAffection(\Sdz\BlogBundle\Entity\Affection $affections)
+    public function addAffection(\BEE\Services\BeeeaseBundle\Entity\Affection $affections)
     {
         $this->affections[] = $affections;
     
@@ -1024,9 +1024,9 @@ class Inspection
     /**
      * Remove affections
      *
-     * @param \Sdz\BlogBundle\Entity\Affection $affections
+     * @param \BEE\Services\BeeeaseBundle\Entity\Affection $affections
      */
-    public function removeAffection(\Sdz\BlogBundle\Entity\Affection $affections)
+    public function removeAffection(\BEE\Services\BeeeaseBundle\Entity\Affection $affections)
     {
         $this->affections->removeElement($affections);
     }
@@ -1037,6 +1037,16 @@ class Inspection
      * @return \Doctrine\Common\Collections\Collection 
      */
     public function getAffections()
+    {
+        return $this->affections;
+    }
+
+    /**
+     * Set affections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function setAffections()
     {
         return $this->affections;
     }
