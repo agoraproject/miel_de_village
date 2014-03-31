@@ -1,7 +1,8 @@
 {%extends "::layout.html.twig"%}
 {% block window -%}
     <h3>Ruche </h3>
-    {{ form(edit_form) class="col-sm-3" }}
+    {% form_theme edit_form 'BEEBackOfficeBeeeaseBundle:Form:fields.html.twig' %}
+    {{ form(edit_form) }}
    <ul class="record_actions">
         <li>
             <a href="{{ path('ruche') }}">

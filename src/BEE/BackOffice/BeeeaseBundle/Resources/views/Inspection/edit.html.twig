@@ -7,10 +7,10 @@
     <a href="{{path('inspection')}}" class="btn btn-default">Retour à la liste</a>
 </ul>
 
+
 {% endblock %}
 {% block window  -%}
-    <h3>Inspection</h3><br/>
-
+    {% form_theme edit_form 'BEEBackOfficeBeeeaseBundle:Form:fields.html.twig' %}
     {{ form(edit_form) }}
-
+<input type="number" name="your_awesome_parameter" id="some_id" class="rating" />
 {% endblock %}

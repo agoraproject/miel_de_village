@@ -34,6 +34,8 @@ class InspectionType extends AbstractType
                          'label' => "Activité au trou d'envol",
                          'attr' => array(
                          'class' => 'form-control')))
+                
+            
             ->add('oeufsVus','checkbox',array('required' => false))
             ->add('reineVue','checkbox',array('required' => false))
             ->add('moisissure','checkbox',array('required' => false))

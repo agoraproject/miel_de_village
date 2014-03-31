@@ -10,15 +10,16 @@
        </div>  
        <div class="spacer-10"></div>
     </div>
-       
 {% endspaceless %}
 {% endblock form_row %}
+
 {% block form_widget_simple %}
 {% spaceless %}
     {% set type = type|default('text') %}
     <input type="{{ type }}" class="form-control" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
-{% endspaceless %}
+   {% endspaceless %}
 {% endblock form_widget_simple %}
+    
 {% block checkbox_widget %}
 {% spaceless %}
    {# <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />#}
@@ -48,15 +49,7 @@
 {% endspaceless %}
 {% endblock date_widget %}   
     
-{% block datepicker %}
-{% spaceless %}
-   <div class="input-group date" id="datepicker-form-2" data-date="12-02-2012" data-date-format="dd-mm-yyyy" style="width:180px">
-        <input class="form-control" size="16" type="text" value="12-02-2012" disabled />
-        <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
-    </div>  
 
-{% endspaceless %}
-{% endblock datepicker %}
     
 {% block choice_widget_collapsed %}
 {% spaceless %}
@@ -102,14 +95,5 @@
     <div class="spacer-10"></div>
 {% endspaceless %}
 {% endblock button_widget %}
-  
 
-    
-    
-
-
-    {{ form_label(form) }}
-   
-    {{ form_errors(form) }} 
-    {{ form_widget(form) }}
-</div>    
+               
